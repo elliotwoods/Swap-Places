@@ -1,15 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" systemname="TouchOSC">
-   <BOUNDS height="8175" left="15240" top="5835" type="Window" width="9000">
+   <BOUNDS height="9030" left="10140" top="4680" type="Window" width="7245">
    </BOUNDS>
-   <NODE componentmode="Hidden" id="0" nodename="UDP (Network Server)" systemname="UDP (Network Server)">
-   <BOUNDS height="270" left="1365" top="615" type="Node" width="2295">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
    <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="4" nodename="Queue (String)" systemname="Queue (String)">
-   <BOUNDS height="270" left="1380" top="2055" type="Node" width="2820">
+   <BOUNDS height="270" left="1995" top="3105" type="Node" width="2820">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -21,15 +15,13 @@
    </PIN>
    <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
-   <BOUNDS left="1380" top="2055" type="Box">
+   <BOUNDS left="1995" top="3105" type="Box">
    </BOUNDS>
    </NODE>
-   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="0" srcpinname="Output">
-   </LINK>
    <NODE componentmode="InABox" id="6" nodename="IOBox (String)" systemname="IOBox (String)">
-   <BOUNDS height="100" left="1380" top="2565" type="Node" width="100">
+   <BOUNDS height="100" left="1995" top="3615" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="2100" left="1380" top="2565" type="Box" width="3015">
+   <BOUNDS height="2100" left="1995" top="3615" type="Box" width="3015">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="10">
    </PIN>
@@ -42,26 +34,10 @@
    </NODE>
    <LINK dstnodeid="6" dstpinname="Input String" srcnodeid="4" srcpinname="Output">
    </LINK>
-   <NODE componentmode="Hidden" id="7" nodename="EQ (String)" systemname="EQ (String)">
-   <BOUNDS height="100" left="1905" top="1335" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Inverse Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="7" dstpinname="Input 1" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
-   <LINKPOINT x="1425" y="1095">
-   </LINKPOINT>
-   <LINKPOINT x="1890" y="1095">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="4" dstpinname="Insert" srcnodeid="7" srcpinname="Inverse Output">
-   </LINK>
    <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="8" nodename="Queue (Spreads)" systemname="Queue (Spreads)">
-   <BOUNDS height="100" left="4530" top="2055" type="Node" width="100">
+   <BOUNDS height="100" left="5145" top="3105" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS left="4530" top="2055" type="Box">
+   <BOUNDS left="5145" top="3105" type="Box">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -73,9 +49,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="9" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="100" left="4515" top="2565" type="Node" width="100">
+   <BOUNDS height="100" left="5130" top="3615" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="2100" left="4515" top="2565" type="Box" width="705">
+   <BOUNDS height="2100" left="5130" top="3615" type="Box" width="705">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="10">
    </PIN>
@@ -87,7 +63,7 @@
    <LINK dstnodeid="9" dstpinname="Y Input Value" srcnodeid="8" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="10" nodename="Timing (Debug)" systemname="Timing (Debug)">
-   <BOUNDS height="100" left="3945" top="1320" type="Node" width="100">
+   <BOUNDS height="100" left="4560" top="2355" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="frames per second" pintype="Output" visible="-1">
    </PIN>
@@ -118,28 +94,10 @@
    </NODE>
    <LINK dstnodeid="8" dstpinname="Input" hiddenwhenlocked="1" srcnodeid="10" srcpinname="Total Runnning Time">
    </LINK>
-   <LINK dstnodeid="8" dstpinname="Insert" hiddenwhenlocked="0" linkstyle="VHV" srcnodeid="7" srcpinname="Inverse Output">
-   <LINKPOINT x="2355" y="1815">
-   </LINKPOINT>
-   <LINKPOINT x="4710" y="1815">
-   </LINKPOINT>
-   </LINK>
-   <NODE componentmode="Hidden" id="11" nodename="UDP (Network Client)" systemname="UDP (Network Client)">
-   <BOUNDS height="270" left="1380" top="6900" type="Node" width="3015">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Remote Host">
-   </PIN>
-   <PIN pinname="Do Send" visible="1">
-   </PIN>
-   <PIN pinname="Remote Port" slicecount="1" values="4445">
-   </PIN>
-   </NODE>
    <NODE componentmode="InABox" id="13" nodename="IOBox (String)" systemname="IOBox (String)">
-   <BOUNDS height="0" left="3345" top="6420" type="Node" width="0">
+   <BOUNDS height="0" left="2445" top="6210" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="3345" top="6420" type="Box" width="2205">
+   <BOUNDS height="240" left="2445" top="6210" type="Box" width="2205">
    </BOUNDS>
    <PIN encoded="0" pinname="Input String" slicecount="1" values="192.168.0.141">
    </PIN>
@@ -153,119 +111,149 @@
    </PIN>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Remote Host|">
    </PIN>
-   </NODE>
-   <LINK dstnodeid="11" dstpinname="Remote Host" srcnodeid="13" srcpinname="Output String">
-   </LINK>
-   <NODE componentmode="Hidden" id="15" nodename="EQ (String)" systemname="EQ (String)">
-   <BOUNDS height="100" left="1980" top="6420" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Inverse Output" visible="1">
+   <PIN pinname="Output String" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="11" dstpinname="Do Send" srcnodeid="15" srcpinname="Inverse Output">
-   </LINK>
-   <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="19" nodename="Cons (String)" systemname="Cons (String)">
-   <BOUNDS height="270" left="1380" top="5550" type="Node" width="1815">
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="23" nodename="Server (OSC)" systemname="Server (OSC)">
+   <BOUNDS height="270" left="1380" top="1110" type="Node" width="3630">
    </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
+   <PIN pinname="Port" slicecount="1" values="4444">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Enabled">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input Count" slicecount="1" values="4">
+   </NODE>
+   <NODE componentmode="InABox" id="24" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4935" top="315" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="4935" top="315" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Input 3" visible="1">
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Input 4" visible="1">
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="20" nodename="Add (String Spectral)" systemname="Add (String Spectral)">
-   <BOUNDS height="100" left="1980" top="5955" type="Node" width="100">
+   <LINK dstnodeid="23" dstpinname="Enabled" srcnodeid="24" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="25" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="4950" top="1560" type="Node" width="0">
    </BOUNDS>
-   <PIN pinname="Output" visible="1">
+   <BOUNDS height="240" left="4950" top="1560" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Status">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="25" dstpinname="Input String" srcnodeid="23" srcpinname="Status">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="26" nodename="Receive (OSC Value)" systemname="Receive (OSC Value)">
+   <BOUNDS height="270" left="255" top="1995" type="Node" width="2700">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Address" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="All">
+   </PIN>
+   <PIN pinname="OnReceive" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="27" nodename="S (OSC)" systemname="S (OSC)">
+   <BOUNDS height="100" left="1395" top="1605" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="27" dstpinname="Input" srcnodeid="23" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="26" srcpinname="Address">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Insert" srcnodeid="26" srcpinname="OnReceive">
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Insert" linkstyle="VHV" srcnodeid="26" srcpinname="OnReceive">
+   <LINKPOINT x="2955" y="2670">
+   </LINKPOINT>
+   <LINKPOINT x="5325" y="2670">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="28" nodename="Client (OSC)" systemname="Client (OSC)">
+   <BOUNDS height="270" left="1200" top="7740" type="Node" width="3750">
+   </BOUNDS>
+   <PIN pinname="Port">
+   </PIN>
+   <PIN pinname="Enabled">
+   </PIN>
+   <PIN pinname="Remote host" visible="1">
    </PIN>
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="15" dstpinname="Input 1" srcnodeid="20" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="20" dstpinname="Input" linkstyle="VHV" srcnodeid="19" srcpinname="Output">
-   <LINKPOINT x="1440" y="5873">
-   </LINKPOINT>
-   <LINKPOINT x="1980" y="5873">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="11" dstpinname="Input" srcnodeid="19" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" filename="" id="2" nodename="S (String)" systemname="S (String)">
-   <BOUNDS height="100" left="2970" top="1335" type="Node" width="100">
+   <NODE componentmode="InABox" id="29" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="3660" top="6780" type="Node" width="0">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <BOUNDS height="240" left="3660" top="6780" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="4445">
    </PIN>
-   <PIN encoded="0" pinname="Send String" slicecount="1" values="/udp/rx">
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Input Value" visible="1">
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Port">
    </PIN>
    </NODE>
-   <LINK dstnodeid="2" dstpinname="Input Value" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
-   <LINKPOINT x="1425" y="1095">
-   </LINKPOINT>
-   <LINKPOINT x="2970" y="1095">
-   </LINKPOINT>
+   <LINK dstnodeid="28" dstpinname="Port" srcnodeid="29" srcpinname="Y Output Value">
    </LINK>
-   <NODE componentmode="Hidden" filename="" id="14" nodename="R (String)" systemname="R (String)">
-   <BOUNDS height="100" left="1380" top="4995" type="Node" width="100">
+   <NODE componentmode="InABox" id="30" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4905" top="6780" type="Node" width="0">
    </BOUNDS>
-   <PIN encoded="0" pinname="Default">
+   <BOUNDS height="480" left="4905" top="6780" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="28" dstpinname="Enabled" srcnodeid="30" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="28" dstpinname="Remote host" srcnodeid="13" srcpinname="Output String">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="31" nodename="R (OSC)" systemname="R (OSC)">
+   <BOUNDS height="100" left="1215" top="6780" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Channel" slicecount="1" values="Tx">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN encoded="0" pinname="Receive String" slicecount="1" visible="1" values="/udp/tx/align">
-   </PIN>
-   <BOUNDS left="1380" top="4995" type="Box">
+   <BOUNDS left="1215" top="6780" type="Box">
    </BOUNDS>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
    </NODE>
-   <NODE componentmode="Hidden" filename="" id="18" nodename="R (String)" systemname="R (String)">
-   <BOUNDS height="100" left="1980" top="4995" type="Node" width="100">
-   </BOUNDS>
-   <PIN encoded="0" pinname="Default">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN encoded="0" pinname="Receive String" slicecount="1" visible="1" values="/udp/tx/faders">
-   </PIN>
-   <BOUNDS left="1980" top="4995" type="Box">
-   </BOUNDS>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="19" dstpinname="Input 1" srcnodeid="14" srcpinname="Input Value">
-   </LINK>
-   <LINK dstnodeid="19" dstpinname="Input 2" srcnodeid="18" srcpinname="Input Value">
-   </LINK>
-   <NODE systemname="R (String)" nodename="R (String)" componentmode="Hidden" id="21">
-   <BOUNDS type="Node" left="2535" top="4995" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Receive String" slicecount="1" values="/udp/tx/openni">
-   </PIN>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="21" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 3">
-   </LINK>
-   <NODE systemname="R (String)" nodename="R (String)" componentmode="Hidden" id="22">
-   <BOUNDS type="Node" left="3135" top="4995" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Receive String" slicecount="1" values="/udp/tx/users">
-   </PIN>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="22" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 4">
+   <LINK dstnodeid="28" dstpinname="Input" srcnodeid="31" srcpinname="Output">
    </LINK>
    </PATCH>

@@ -1,21 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\Faders.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\Faders.v4p" systemname="Faders">
-   <BOUNDS height="11295" left="15840" top="2910" type="Window" width="11955">
+   <BOUNDS height="11295" left="15840" top="2910" type="Window" width="8925">
    </BOUNDS>
-   <NODE componentmode="Hidden" id="2" nodename="OSCDecoder (Network)" systemname="OSCDecoder (Network)">
-   <BOUNDS height="270" left="480" top="2430" type="Node" width="1125">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Address" visible="1">
-   </PIN>
-   <PIN pinname="Arguments" visible="1">
-   </PIN>
-   <PIN pinname="OnReceive" visible="1">
-   </PIN>
-   </NODE>
    <NODE componentmode="Hidden" id="3" nodename="Add (String)" systemname="Add (String)">
-   <BOUNDS height="100" left="1545" top="1950" type="Node" width="100">
+   <BOUNDS height="100" left="1575" top="1950" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 2" visible="1">
    </PIN>
@@ -29,7 +17,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="4" nodename="I (Spreads)" systemname="I (Spreads)">
-   <BOUNDS height="100" left="1710" top="300" type="Node" width="100">
+   <BOUNDS height="100" left="1740" top="300" type="Node" width="100">
    </BOUNDS>
    <PIN pinname=".. To [" slicecount="1" values="4">
    </PIN>
@@ -37,7 +25,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="5" nodename="FormatValue (String)" systemname="FormatValue (String)">
-   <BOUNDS height="100" left="1710" top="750" type="Node" width="100">
+   <BOUNDS height="100" left="1740" top="750" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -48,20 +36,6 @@
    </LINK>
    <LINK dstnodeid="3" dstpinname="Input 2" srcnodeid="5" srcpinname="Output">
    </LINK>
-   <LINK dstnodeid="2" dstpinname="Address" srcnodeid="3" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" id="7" nodename="OSCDecoder (Network)" systemname="OSCDecoder (Network)">
-   <BOUNDS height="100" left="6525" top="2430" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Address" visible="1">
-   </PIN>
-   <PIN pinname="Arguments" visible="1">
-   </PIN>
-   <PIN pinname="OnReceive" visible="1">
-   </PIN>
-   </NODE>
    <NODE componentmode="Hidden" id="6" nodename="Add (String)" systemname="Add (String)">
    <BOUNDS height="100" left="7515" top="1950" type="Node" width="100">
    </BOUNDS>
@@ -76,42 +50,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="7" dstpinname="Address" srcnodeid="6" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" id="8" nodename="AsValue (String)" systemname="AsValue (String)">
-   <BOUNDS height="100" left="465" top="3135" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="8" dstpinname="Input" srcnodeid="2" srcpinname="Arguments">
-   </LINK>
-   <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" id="11" nodename="AvoidNIL (Spreads)" systemname="AvoidNIL (Spreads)">
-   <BOUNDS height="100" left="450" top="3615" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="11" dstpinname="Input" srcnodeid="8" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" id="12" nodename="S+H (Animation)" systemname="S+H (Animation)">
-   <BOUNDS height="270" left="435" top="4110" type="Node" width="1185">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Set" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="12" dstpinname="Input" srcnodeid="11" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="12" dstpinname="Set" srcnodeid="2" srcpinname="OnReceive">
-   </LINK>
    <NODE componentmode="InABox" id="14" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="420" top="4530" type="Node" width="100">
    </BOUNDS>
@@ -128,36 +66,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="18" nodename="AsValue (String)" systemname="AsValue (String)">
-   <BOUNDS height="100" left="6510" top="3135" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" id="17" nodename="AvoidNIL (Spreads)" systemname="AvoidNIL (Spreads)">
-   <BOUNDS height="100" left="6510" top="3615" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="17" dstpinname="Input" srcnodeid="18" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" id="16" nodename="S+H (Animation)" systemname="S+H (Animation)">
-   <BOUNDS height="270" left="6510" top="4110" type="Node" width="1080">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Set" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="16" dstpinname="Input" srcnodeid="17" srcpinname="Output">
-   </LINK>
    <NODE componentmode="InABox" id="15" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="6495" top="4530" type="Node" width="100">
    </BOUNDS>
@@ -184,16 +92,10 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="15" dstpinname="Y Input Value" srcnodeid="16" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="18" dstpinname="Input" srcnodeid="7" srcpinname="Arguments">
-   </LINK>
-   <LINK dstnodeid="16" dstpinname="Set" srcnodeid="7" srcpinname="OnReceive">
-   </LINK>
    <LINK dstnodeid="6" dstpinname="Input 2" linkstyle="VHV" srcnodeid="5" srcpinname="Output">
-   <LINKPOINT x="3080" y="1365">
+   <LINKPOINT x="3100" y="1365">
    </LINKPOINT>
-   <LINKPOINT x="6370" y="1365">
+   <LINKPOINT x="6380" y="1365">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" id="23" nodename="Multiply (Value)" systemname="Multiply (Value)">
@@ -272,26 +174,6 @@
    </LINK>
    <LINK dstnodeid="28" dstpinname="Y Input Value" srcnodeid="24" srcpinname="W">
    </LINK>
-   <NODE componentmode="Hidden" filename="" id="1" nodename="R (String)" systemname="R (String)">
-   <BOUNDS height="100" left="480" top="300" type="Node" width="100">
-   </BOUNDS>
-   <PIN encoded="0" pinname="Receive String" slicecount="1" values="/udp/rx">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <BOUNDS left="480" top="300" type="Box">
-   </BOUNDS>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="2" dstpinname="Input" srcnodeid="1" srcpinname="Input Value">
-   </LINK>
-   <LINK dstnodeid="7" dstpinname="Input" linkstyle="VHV" srcnodeid="1" srcpinname="Input Value">
-   <LINKPOINT x="1905" y="1485">
-   </LINKPOINT>
-   <LINKPOINT x="5145" y="1485">
-   </LINKPOINT>
-   </LINK>
    <NODE componentmode="Hidden" id="38" nodename="FlipFlop (Animation)" systemname="FlipFlop (Animation)">
    <BOUNDS height="100" left="435" top="6810" type="Node" width="100">
    </BOUNDS>
@@ -342,14 +224,6 @@
    </LINK>
    <LINK dstnodeid="44" dstpinname="Y Input Value" srcnodeid="46" srcpinname="Output">
    </LINK>
-   <LINK dstnodeid="46" dstpinname="Input 2" linkstyle="Bezier" srcnodeid="7" srcpinname="OnReceive">
-   <LINKPOINT x="7500" y="4023">
-   </LINKPOINT>
-   <LINKPOINT x="2850" y="4048">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="14" dstpinname="Y Input Value" srcnodeid="12" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="48" nodename="OR (Boolean)" systemname="OR (Boolean)">
    <BOUNDS height="270" left="420" top="6210" type="Node" width="1950">
    </BOUNDS>
@@ -364,7 +238,7 @@
    </LINK>
    <LINK dstnodeid="38" dstpinname="Set" srcnodeid="48" srcpinname="Output">
    </LINK>
-   <NODE componentmode="InABox" id="49" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)" hiddenwhenlocked="0">
+   <NODE componentmode="InABox" hiddenwhenlocked="0" id="49" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="435" top="7230" type="Node" width="100">
    </BOUNDS>
    <BOUNDS height="465" left="435" top="7230" type="Box" width="1110">
@@ -404,12 +278,6 @@
    </NODE>
    <LINK dstnodeid="48" dstpinname="Input 1" srcnodeid="53" srcpinname="Output">
    </LINK>
-   <LINK dstnodeid="53" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="2" srcpinname="OnReceive">
-   <LINKPOINT x="1560" y="4238">
-   </LINKPOINT>
-   <LINKPOINT x="915" y="4238">
-   </LINKPOINT>
-   </LINK>
    <LINK dstnodeid="53" dstpinname="Input 1" srcnodeid="52" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="55" nodename="EQ (Value)" systemname="EQ (Value)">
@@ -423,7 +291,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="54" nodename="AND (Boolean)" systemname="AND (Boolean)">
-   <BOUNDS height="100" left="1110" top="5775" type="Node" width="100">
+   <BOUNDS height="270" left="1110" top="5775" type="Node" width="540">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -443,8 +311,6 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="52" dstpinname="Input 1" srcnodeid="14" srcpinname="Y Output Value">
-   </LINK>
-   <LINK dstnodeid="54" dstpinname="Input 2" srcnodeid="2" srcpinname="OnReceive">
    </LINK>
    <NODE componentmode="Hidden" id="29" nodename="Decay (Animation)" systemname="Decay (Animation)">
    <BOUNDS height="270" left="435" top="7965" type="Node" width="3120">
@@ -473,7 +339,7 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Master Address" visible="1">
+   <PIN encoded="0" pinname="Master Address" visible="1">
    </PIN>
    <PIN pinname="Faders" visible="1">
    </PIN>
@@ -482,24 +348,6 @@
    <PIN pinname="Mutes" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="62" dstpinname="Output" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="23" srcpinname="Output">
-   <LINKPOINT x="510" y="9210">
-   </LINKPOINT>
-   <LINKPOINT x="5070" y="9210">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="62" dstpinname="Master Address" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="3" srcpinname="Output">
-   <LINKPOINT x="1595" y="5985">
-   </LINKPOINT>
-   <LINKPOINT x="5455" y="5985">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="62" dstpinname="Faders" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="15" srcpinname="Y Output Value">
-   <LINKPOINT x="6510" y="7373">
-   </LINKPOINT>
-   <LINKPOINT x="5865" y="7373">
-   </LINKPOINT>
-   </LINK>
    <LINK dstnodeid="62" dstpinname="Fader Address" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="6" srcpinname="Output">
    <LINKPOINT x="7530" y="5985">
    </LINKPOINT>
@@ -512,8 +360,8 @@
    <LINKPOINT x="6565" y="8525">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="63" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2295" top="7380" width="100" height="100">
+   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="63" nodename="Switch (Value Input)" systemname="Switch (Value Input)">
+   <BOUNDS height="100" left="2295" top="7380" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -522,12 +370,80 @@
    <PIN pinname="Switch" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="63" srcpinname="Output" dstnodeid="29" dstpinname="Attack" linkstyle="VHV" hiddenwhenlocked="1">
+   <LINK dstnodeid="29" dstpinname="Attack" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="63" srcpinname="Output">
    <LINKPOINT x="2295" y="7793">
    </LINKPOINT>
    <LINKPOINT x="1260" y="7793">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="44" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Switch" hiddenwhenlocked="1">
+   <LINK dstnodeid="63" dstpinname="Switch" hiddenwhenlocked="1" srcnodeid="44" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="65" nodename="R+H (OSC Value)" systemname="R+H (OSC Value)">
+   <BOUNDS height="270" left="420" top="2670" type="Node" width="1230">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Address" visible="1">
+   </PIN>
+   <BOUNDS left="420" top="2670" type="Box">
+   </BOUNDS>
+   <PIN pinname="OnReceive" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="14" dstpinname="Y Input Value" srcnodeid="65" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="65" dstpinname="Address" srcnodeid="3" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="66" nodename="R+H (OSC Value)" systemname="R+H (OSC Value)">
+   <BOUNDS height="270" left="6510" top="2670" type="Node" width="1050">
+   </BOUNDS>
+   <PIN pinname="Address" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS left="6510" top="2670" type="Box">
+   </BOUNDS>
+   <PIN pinname="OnReceive" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="66" dstpinname="Address" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="15" dstpinname="Y Input Value" srcnodeid="66" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="46" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="66" srcpinname="OnReceive">
+   <LINKPOINT x="7500" y="4155">
+   </LINKPOINT>
+   <LINKPOINT x="2835" y="4155">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="53" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="65" srcpinname="OnReceive">
+   <LINKPOINT x="1575" y="4358">
+   </LINKPOINT>
+   <LINKPOINT x="915" y="4358">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="54" dstpinname="Input 2" linkstyle="VHV" srcnodeid="65" srcpinname="OnReceive">
+   <LINKPOINT x="1590" y="4358">
+   </LINKPOINT>
+   <LINKPOINT x="1590" y="4358">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="62" dstpinname="Master Address" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="3" srcpinname="Output">
+   <LINKPOINT x="1635" y="5985">
+   </LINKPOINT>
+   <LINKPOINT x="5445" y="5985">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="62" dstpinname="Output" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="49" srcpinname="Y Output Value">
+   <LINKPOINT x="495" y="8708">
+   </LINKPOINT>
+   <LINKPOINT x="5070" y="8708">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="62" dstpinname="Faders" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="510" y="9210">
+   </LINKPOINT>
+   <LINKPOINT x="5835" y="9210">
+   </LINKPOINT>
    </LINK>
    </PATCH>

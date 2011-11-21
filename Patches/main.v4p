@@ -3,25 +3,25 @@
    <BOUNDS height="15105" left="12180" top="285" type="Window" width="9510">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="Network\TouchOSC.v4p" id="1" nodename="Network\TouchOSC.v4p" systemname="TouchOSC" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\">
-   <BOUNDS height="100" left="240" top="1275" type="Node" width="100">
+   <BOUNDS height="100" left="210" top="900" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Remote Host">
    </PIN>
-   <BOUNDS left="240" top="1275" type="Box">
+   <BOUNDS left="210" top="900" type="Box">
    </BOUNDS>
-   <BOUNDS height="8175" left="10140" top="4680" type="Window" width="9000">
+   <BOUNDS height="9030" left="10140" top="4680" type="Window" width="7245">
    </BOUNDS>
    </NODE>
    <NODE componentmode="Hidden" filename="Audio alignment\Align.v4p" id="3" nodename="Audio alignment\Align.v4p" systemname="Align" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Audio alignment\">
    <BOUNDS height="100" left="2730" top="165" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="15060" left="10875" top="255" type="Window" width="10080">
+   <BOUNDS height="15060" left="14085" top="540" type="Window" width="10080">
    </BOUNDS>
    </NODE>
    <NODE componentmode="InABox" id="4" nodename="IOBox (String)" systemname="IOBox (String)">
-   <BOUNDS height="0" left="225" top="165" type="Node" width="0">
+   <BOUNDS height="0" left="210" top="180" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="405" left="225" top="165" type="Box" width="2415">
+   <BOUNDS height="375" left="210" top="180" type="Box" width="2115">
    </BOUNDS>
    <PIN encoded="0" pinname="Input String" slicecount="1" values="192.168.0.141">
    </PIN>
@@ -35,7 +35,7 @@
    </PIN>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Remote Host|">
    </PIN>
-   <PIN pinname="Size" slicecount="1" values="14">
+   <PIN pinname="Size" slicecount="1" values="12">
    </PIN>
    </NODE>
    <LINK dstnodeid="1" dstpinname="Remote Host" srcnodeid="4" srcpinname="Output String">
@@ -269,7 +269,7 @@
    </PIN>
    <BOUNDS height="270" left="3630" top="1275" type="Node" width="2535">
    </BOUNDS>
-   <BOUNDS height="11880" left="1485" top="2865" type="Window" width="15285">
+   <BOUNDS height="10800" left="1485" top="2865" type="Window" width="13515">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -300,7 +300,11 @@
    <LINKPOINT x="6510" y="2355">
    </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="18" dstpinname="RGB Image" srcnodeid="5" srcpinname="RGB Image">
+   <LINK dstnodeid="18" dstpinname="RGB Image" linkstyle="VHV" srcnodeid="5" srcpinname="RGB Image">
+   <LINKPOINT x="4905" y="2670">
+   </LINKPOINT>
+   <LINKPOINT x="5100" y="2670">
+   </LINKPOINT>
    </LINK>
    <LINK dstnodeid="16" dstpinname="Y Input Value" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Present">
    <LINKPOINT x="3885" y="1810">
@@ -337,7 +341,7 @@
    <NODE componentmode="Hidden" id="-7" nodename="MainLoop (VVVV)" systemname="MainLoop (VVVV)">
    <BOUNDS height="270" left="585" top="7005" type="Node" width="1095">
    </BOUNDS>
-   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
+   <PIN pinname="Time Mode" slicecount="1" values="Raw">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="21" nodename="IOBox (String)" systemname="IOBox (String)">
@@ -481,7 +485,7 @@
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="Layers\Faders.v4p" hiddenwhenlocked="0" id="35" managers="" nodename="Layers\Faders.v4p" systemname="Faders" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
-   <BOUNDS height="270" left="1650" top="4575" type="Node" width="3795">
+   <BOUNDS height="270" left="1650" top="4125" type="Node" width="3795">
    </BOUNDS>
    <PIN pinname="0" visible="1">
    </PIN>
@@ -560,34 +564,38 @@
    <LINKPOINT x="3690" y="3503">
    </LINKPOINT>
    </LINK>
-   <NODE id="37" componentmode="Hidden" filename="Layers\L1. Edges.v4p" nodename="Layers\L1. Edges.v4p" systemname="L1. Edges">
+   <NODE componentmode="Hidden" filename="Layers\L1. Edges.v4p" id="37" nodename="Layers\L1. Edges.v4p" systemname="L1. Edges" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
    <PIN pinname="Value" visible="1">
    </PIN>
    <PIN pinname="Lookup map" visible="1">
    </PIN>
    <PIN pinname="Users" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="15060" top="7305" width="6825" height="5040">
+   <BOUNDS height="5040" left="15060" top="7305" type="Window" width="6825">
    </BOUNDS>
-   <BOUNDS type="Node" height="100" left="1980" top="5460" width="100">
+   <BOUNDS height="100" left="1980" top="5460" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1980" top="5460">
+   <BOUNDS left="1980" top="5460" type="Box">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    <PIN pinname="RGB image" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Users mask" dstnodeid="37" dstpinname="Users">
+   <LINK dstnodeid="37" dstpinname="Users" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Users mask">
+   <LINKPOINT x="4560" y="3503">
+   </LINKPOINT>
+   <LINKPOINT x="2490" y="3503">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="37" srcpinname="Layer" dstnodeid="34" dstpinname="Layer 2">
+   <LINK dstnodeid="34" dstpinname="Layer 2" srcnodeid="37" srcpinname="Layer">
    </LINK>
-   <LINK srcnodeid="25" srcpinname="Lookup map" dstnodeid="37" dstpinname="Lookup map" linkstyle="VHV">
+   <LINK dstnodeid="37" dstpinname="Lookup map" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
    <LINKPOINT x="5730" y="5048">
    </LINKPOINT>
    <LINKPOINT x="2070" y="5048">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="35" srcpinname="1" dstnodeid="37" dstpinname="Value">
+   <LINK dstnodeid="37" dstpinname="Value" srcnodeid="35" srcpinname="1">
    </LINK>
    </PATCH>
