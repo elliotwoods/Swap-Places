@@ -1,0 +1,503 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Development tests\Optical Flow - speed tests.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Development tests\Optical Flow - speed tests.v4p" systemname="Optical Flow - speed tests">
+   <BOUNDS height="12630" left="0" top="1965" type="Window" width="17580">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <BOUNDS height="100" left="390" top="6315" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="5070" left="390" top="6315" type="Box" width="8085">
+   </BOUNDS>
+   <BOUNDS height="5010" left="8835" top="12300" type="Window" width="6240">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="29" nodename="Grid (EX9.Geometry)" systemname="Grid (EX9.Geometry)">
+   <BOUNDS height="100" left="1410" top="5520" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.EmguCV\Development Tests\effects\ScaleColor.fx" id="5" nodename="ScaleColor (EX9.Effect)" systemname="ScaleColor (EX9.Effect)">
+   <BOUNDS height="270" left="405" top="5985" type="Node" width="8055">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Scale">
+   </PIN>
+   <PIN pinname="MinRange">
+   </PIN>
+   <PIN pinname="MaxRange">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Layers" srcnodeid="5" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Mesh" linkstyle="VHV" srcnodeid="29" srcpinname="Mesh">
+   <LINKPOINT x="1190" y="5898">
+   </LINKPOINT>
+   <LINKPOINT x="1390" y="5848">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="35" nodename="OpticalFlowHS (EmguCV)" systemname="OpticalFlowHS (EmguCV)">
+   <BOUNDS height="270" left="3390" top="2175" type="Node" width="5805">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Iterations">
+   </PIN>
+   <PIN pinname="Lambda">
+   </PIN>
+   <PIN pinname="Use Previous Velocity">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="36" nodename="AsTexture (EmguCV)" systemname="AsTexture (EmguCV)">
+   <BOUNDS height="100" left="3405" top="3390" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="37" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5325" top="1350" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5325" top="1350" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.22">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Lambda">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="35" dstpinname="Lambda" srcnodeid="37" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="38" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="7230" top="1350" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="7230" top="1350" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Maximum Iterations|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="35" dstpinname="Maximum Iterations" srcnodeid="38" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="44" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4425" top="5385" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="4425" top="5385" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="-2">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="MinRange">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="MinRange" srcnodeid="44" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="45" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5385" top="5385" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5385" top="5385" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="MaxRange">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="MaxRange" srcnodeid="45" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="46" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="9150" top="1350" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="9150" top="1350" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Use Previous Velocity|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="35" dstpinname="Use Previous Velocity" srcnodeid="46" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="47" nodename="AvgSdv (EmguCV)" systemname="AvgSdv (EmguCV)">
+   <BOUNDS height="270" left="5460" top="3270" type="Node" width="3165">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Average" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="50" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="7530" top="3735" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="7530" top="3735" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Standard Deviation|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="50" dstpinname="Y Input Value" srcnodeid="47" srcpinname="Standard Deviation">
+   </LINK>
+   <NODE componentmode="InABox" id="51" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5445" top="3690" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="5445" top="3690" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Average">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="51" dstpinname="Y Input Value" srcnodeid="47" srcpinname="Average">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.EmguCV\Development Tests\effects\BackwardsLookupOnOpticalFlow.fx" id="55" nodename="BackwardsLookupOnOpticalFlow (EX9.Effect)" systemname="BackwardsLookupOnOpticalFlow (EX9.Effect)">
+   <BOUNDS height="270" left="8595" top="5955" type="Node" width="3000">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Previous frame" visible="1">
+   </PIN>
+   <PIN pinname="Optical flow" visible="1">
+   </PIN>
+   <PIN pinname="Current frame" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="| TDerivative|">
+   </PIN>
+   <PIN pinname="threshold" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="dt" slicecount="1" values="0.01">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="56" nodename="Grid (EX9.Geometry)" systemname="Grid (EX9.Geometry)">
+   <BOUNDS height="100" left="8835" top="5535" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="55" dstpinname="Mesh" srcnodeid="56" srcpinname="Mesh">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="58" nodename="FrameDelay (EmguCV Filter)" systemname="FrameDelay (EmguCV Filter)">
+   <BOUNDS height="100" left="9315" top="3630" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="59" nodename="AsTexture (EmguCV)" systemname="AsTexture (EmguCV)">
+   <BOUNDS height="100" left="9315" top="4110" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="59" dstpinname="Image" srcnodeid="58" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="55" dstpinname="Optical flow" linkstyle="VHV" srcnodeid="36" srcpinname="Texture Out">
+   <LINKPOINT x="3465" y="4793">
+   </LINKPOINT>
+   <LINKPOINT x="9810" y="4793">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.OpenNI\Samples\modules\FullHouse (OpenNI).v4p" id="61" nodename="FullHouse (OpenNI)" systemname="FullHouse (OpenNI)">
+   <BOUNDS height="270" left="3240" top="675" type="Node" width="9780">
+   </BOUNDS>
+   <PIN pinname="Open">
+   </PIN>
+   <PIN pinname="RGB Image" visible="1">
+   </PIN>
+   <PIN pinname="World Image" visible="1">
+   </PIN>
+   <PIN pinname="Depth Image" visible="1">
+   </PIN>
+   <PIN pinname="World Texture" visible="1">
+   </PIN>
+   <PIN pinname="Context" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="64" nodename="Blend (EX9.RenderState)" systemname="Blend (EX9.RenderState)">
+   <BOUNDS height="100" left="8595" top="5145" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Draw Mode" slicecount="1" values="Add">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="55" dstpinname="Render State" srcnodeid="64" srcpinname="Render State Out">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Texture" srcnodeid="36" srcpinname="Texture Out">
+   </LINK>
+   <NODE componentmode="InABox" id="67" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <BOUNDS height="100" left="8610" top="6390" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="2805" left="8610" top="6390" type="Box" width="2820">
+   </BOUNDS>
+   <BOUNDS height="5010" left="13575" top="8190" type="Window" width="6240">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="67" dstpinname="Layers" srcnodeid="55" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="68" nodename="DX9Texture (EX9.Texture)" systemname="DX9Texture (EX9.Texture)">
+   <BOUNDS height="100" left="11355" top="9675" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="256">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="256">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="A16B16G16R16F">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="68" dstpinname="Source" srcnodeid="67" srcpinname="EX9 Out">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="73" nodename="Dilate (EmguCV Filter)" systemname="Dilate (EmguCV Filter)">
+   <BOUNDS height="100" left="3390" top="2685" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Iterations" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="73" dstpinname="Input" srcnodeid="35" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="36" dstpinname="Image" srcnodeid="73" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="47" dstpinname="Input" linkstyle="VHV" srcnodeid="73" srcpinname="Output">
+   <LINKPOINT x="3450" y="3098">
+   </LINKPOINT>
+   <LINKPOINT x="5460" y="3098">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="82" nodename="Framerate (EmguCV)" systemname="Framerate (EmguCV)">
+   <BOUNDS height="100" left="1275" top="2700" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Framerate" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="81" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1260" top="3720" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="1260" top="3720" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="81" dstpinname="Y Input Value" srcnodeid="82" srcpinname="Framerate">
+   </LINK>
+   <LINK dstnodeid="58" dstpinname="Input" srcnodeid="61" srcpinname="World Image">
+   </LINK>
+   <LINK dstnodeid="55" dstpinname="Current frame" linkstyle="Bezier" srcnodeid="61" srcpinname="World Texture">
+   <LINKPOINT x="10545" y="3425">
+   </LINKPOINT>
+   <LINKPOINT x="9600" y="3475">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="55" dstpinname="Previous frame" srcnodeid="59" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="82" dstpinname="Input" srcnodeid="61" srcpinname="RGB Image">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="83" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3240" top="15" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3240" top="15" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Open" encoded="0">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="83" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Open">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="RGB Image" dstnodeid="35" dstpinname="Input">
+   </LINK>
+   <NODE systemname="O0. Particles" filename="Subpatches\O0. Particles.v4p" nodename="Subpatches\O0. Particles.v4p" componentmode="InAWindow" id="84">
+   <BOUNDS type="Node" left="10200" top="10350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZT Layer2" visible="1">
+   </PIN>
+   <PIN pinname="Velocity Layer2" visible="1">
+   </PIN>
+   <PIN pinname="Mask Layer2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="World Texture" dstnodeid="84" dstpinname="XYZT Layer2">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Texture Out" dstnodeid="84" dstpinname="Velocity Layer2">
+   </LINK>
+   <NODE systemname="AsTexture (EmguCV)" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" nodename="AsTexture (EmguCV)" componentmode="Hidden" id="87">
+   <BOUNDS type="Node" left="12225" top="7920" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="87" srcpinname="Texture Out" dstnodeid="84" dstpinname="Mask Layer2">
+   </LINK>
+   <NODE systemname="ImageViewQuad (EmguCV, Normalised)" filename="..\..\..\VVVV.Research\Prerequisites\modules\ImageViewQuad (EmguCV, Normalised).v4p" nodename="ImageViewQuad (EmguCV, Normalised)" componentmode="Hidden" id="88">
+   <BOUNDS type="Node" left="13275" top="7920" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="89">
+   <BOUNDS type="Node" left="13275" top="8460" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13275" top="8460" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14820" top="10800" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="88" srcpinname="Layer" dstnodeid="89" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Users (OpenNI)" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.OpenNI.dll" nodename="Users (OpenNI)" componentmode="Hidden" id="90">
+   <BOUNDS type="Node" left="13095" top="4470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Context" visible="1">
+   </PIN>
+   <PIN pinname="Mask" visible="1">
+   </PIN>
+   <PIN pinname="ID" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Context" dstnodeid="90" dstpinname="Context">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="92">
+   <BOUNDS type="Node" left="14070" top="4470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" values="0.461538461538462">
+   </PIN>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="= (EmguCV Filter, Scalar)" filename="..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" nodename="= (EmguCV Filter, Scalar)" componentmode="Hidden" id="93">
+   <BOUNDS type="Node" left="13455" top="6135" width="705" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="90" srcpinname="Mask" dstnodeid="93" dstpinname="Input">
+   </LINK>
+   <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="94">
+   <BOUNDS type="Node" left="14100" top="5685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="95">
+   <BOUNDS type="Node" left="14115" top="5325" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="95" srcpinname="Output" dstnodeid="94" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="94" srcpinname="Output" dstnodeid="93" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="ID" dstnodeid="95" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Cycles" dstnodeid="94" dstpinname="Index">
+   </LINK>
+   <LINK srcnodeid="93" srcpinname="Output" dstnodeid="88" dstpinname="Image">
+   </LINK>
+   <LINK srcnodeid="93" srcpinname="Output" dstnodeid="87" dstpinname="Image">
+   </LINK>
+   </PATCH>

@@ -1,0 +1,73 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Output.v4p" systemname="Output" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Output.v4p">
+   <BOUNDS type="Window" left="18915" top="7245" width="6000" height="7545">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="FullScreen" id="0">
+   <BOUNDS type="Node" left="270" top="990" width="4830" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="270" top="990" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="31725" top="7245" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="270" top="270" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="270" top="270" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layers" encoded="0">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3855" top="1560" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3855" top="1560" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Actual Backbuffer Width|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Actual Backbuffer Width" dstnodeid="2" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="3" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4410" top="2265" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4410" top="2265" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Actual Backbuffer Height|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Actual Backbuffer Height" dstnodeid="3" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="285" top="2895" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="285" top="2895" width="5265" height="3990">
+   </BOUNDS>
+   <BOUNDS type="Window" left="19710" top="10935" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   </PATCH>

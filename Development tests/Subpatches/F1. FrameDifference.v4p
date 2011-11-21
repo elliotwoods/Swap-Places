@@ -1,0 +1,109 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Development tests\Subpatches\F1. FrameDifference.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Development tests\Subpatches\F1. FrameDifference.v4p" systemname="F1. FrameDifference">
+   <BOUNDS height="11655" left="9825" top="3675" type="Window" width="9675">
+   </BOUNDS>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="4" nodename="FrameDifference (EmguCV Filter)" systemname="FrameDifference (EmguCV Filter)">
+   <BOUNDS height="100" left="1260" top="1035" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Threshold Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Threshold" slicecount="1" values="0.001">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="3" nodename="Quad (DX9)" systemname="Quad (DX9)">
+   <BOUNDS height="100" left="930" top="4005" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="2" nodename="AsTexture (EmguCV)" systemname="AsTexture (EmguCV)">
+   <BOUNDS height="100" left="1260" top="3555" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Texture" srcnodeid="2" srcpinname="Texture Out">
+   </LINK>
+   <NODE componentmode="InABox" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <BOUNDS height="100" left="930" top="4365" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="5985" left="930" top="4365" type="Box" width="8100">
+   </BOUNDS>
+   <BOUNDS height="5010" left="3480" top="8115" type="Window" width="6240">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Layers" srcnodeid="3" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="0" nodename="UniformScale (Transform)" systemname="UniformScale (Transform)">
+   <BOUNDS height="100" left="105" top="3510" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Transform" srcnodeid="0" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="InABox" id="5" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="100" left="1245" top="465" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="1245" top="465" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="5" srcpinname="Output Node">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="6" nodename="Erode (EmguCV Filter)" systemname="Erode (EmguCV Filter)">
+   <BOUNDS height="100" left="1260" top="1860" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="6" dstpinname="Input" srcnodeid="4" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\Prerequisites\plugins\VVVV.Nodes.EmguCV.dll" id="7" nodename="AsTexture (EmguCV)" systemname="AsTexture (EmguCV)">
+   <BOUNDS height="100" left="2205" top="2535" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Image" linkstyle="VHV" srcnodeid="6" srcpinname="Output">
+   <LINKPOINT x="1315" y="2318">
+   </LINKPOINT>
+   <LINKPOINT x="2210" y="2318">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="9" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="100" left="2190" top="3000" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="2190" top="3000" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Input Node" srcnodeid="7" srcpinname="Texture Out">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="2" dstpinname="Image">
+   </LINK>
+   </PATCH>
