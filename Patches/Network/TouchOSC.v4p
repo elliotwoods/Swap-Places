@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" systemname="TouchOSC">
-   <BOUNDS height="8175" left="6000" top="4950" type="Window" width="9000">
+   <BOUNDS height="8175" left="15240" top="5835" type="Window" width="9000">
    </BOUNDS>
    <NODE componentmode="Hidden" id="0" nodename="UDP (Network Server)" systemname="UDP (Network Server)">
    <BOUNDS height="270" left="1365" top="615" type="Node" width="2295">
@@ -166,8 +166,8 @@
    </NODE>
    <LINK dstnodeid="11" dstpinname="Do Send" srcnodeid="15" srcpinname="Inverse Output">
    </LINK>
-   <NODE systemname="Cons (String)" filename="%VVVV%\plugins\SpreadOperations.dll" nodename="Cons (String)" componentmode="Hidden" id="19">
-   <BOUNDS type="Node" left="1380" top="5550" width="645" height="270">
+   <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="19" nodename="Cons (String)" systemname="Cons (String)">
+   <BOUNDS height="270" left="1380" top="5550" type="Node" width="1815">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -175,24 +175,30 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 4" visible="1">
+   </PIN>
    </NODE>
-   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="20">
-   <BOUNDS type="Node" left="1980" top="5955" width="100" height="100">
+   <NODE componentmode="Hidden" id="20" nodename="Add (String Spectral)" systemname="Add (String Spectral)">
+   <BOUNDS height="100" left="1980" top="5955" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="15" dstpinname="Input 1">
+   <LINK dstnodeid="15" dstpinname="Input 1" srcnodeid="20" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="20" dstpinname="Input" linkstyle="VHV">
+   <LINK dstnodeid="20" dstpinname="Input" linkstyle="VHV" srcnodeid="19" srcpinname="Output">
    <LINKPOINT x="1440" y="5873">
    </LINKPOINT>
    <LINKPOINT x="1980" y="5873">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="11" dstpinname="Input">
+   <LINK dstnodeid="11" dstpinname="Input" srcnodeid="19" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" filename="" id="2" nodename="S (String)" systemname="S (String)">
    <BOUNDS height="100" left="2970" top="1335" type="Node" width="100">
@@ -204,7 +210,7 @@
    <PIN pinname="Input Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="2" dstpinname="Input Value" linkstyle="VHV">
+   <LINK dstnodeid="2" dstpinname="Input Value" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
    <LINKPOINT x="1425" y="1095">
    </LINKPOINT>
    <LINKPOINT x="2970" y="1095">
@@ -219,7 +225,7 @@
    </PIN>
    <PIN encoded="0" pinname="Receive String" slicecount="1" visible="1" values="/udp/tx/align">
    </PIN>
-   <BOUNDS type="Box" left="1380" top="4995">
+   <BOUNDS left="1380" top="4995" type="Box">
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
@@ -233,13 +239,33 @@
    </PIN>
    <PIN encoded="0" pinname="Receive String" slicecount="1" visible="1" values="/udp/tx/faders">
    </PIN>
-   <BOUNDS type="Box" left="1980" top="4995">
+   <BOUNDS left="1980" top="4995" type="Box">
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="14" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 1">
+   <LINK dstnodeid="19" dstpinname="Input 1" srcnodeid="14" srcpinname="Input Value">
    </LINK>
-   <LINK srcnodeid="18" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 2">
+   <LINK dstnodeid="19" dstpinname="Input 2" srcnodeid="18" srcpinname="Input Value">
+   </LINK>
+   <NODE systemname="R (String)" nodename="R (String)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="2535" top="4995" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="/udp/tx/openni">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 3">
+   </LINK>
+   <NODE systemname="R (String)" nodename="R (String)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="3135" top="4995" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="/udp/tx/users">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Input Value" dstnodeid="19" dstpinname="Input 4">
    </LINK>
    </PATCH>

@@ -134,32 +134,32 @@
    <LINKPOINT x="1960" y="1230">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="CameraCoordsView (Transform)" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.EmguCV\Build\modules\CameraCoordsView (Transform).v4p" nodename="CameraCoordsView (Transform)" componentmode="Hidden" id="10">
-   <BOUNDS type="Node" left="4875" top="2040" width="100" height="100">
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.EmguCV\Build\modules\CameraCoordsView (Transform).v4p" id="10" nodename="CameraCoordsView (Transform)" systemname="CameraCoordsView (Transform)">
+   <BOUNDS height="100" left="4875" top="2040" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="Resolution" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Resolution" linkstyle="VHV">
+   <LINK dstnodeid="10" dstpinname="Resolution" linkstyle="VHV" srcnodeid="5" srcpinname="Y Output Value">
    <LINKPOINT x="2360" y="1343">
    </LINKPOINT>
    <LINKPOINT x="4870" y="1343">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="11">
-   <BOUNDS type="Node" left="6645" top="2040" width="100" height="100">
+   <NODE componentmode="Hidden" id="11" nodename="Scale (Transform)" systemname="Scale (Transform)">
+   <BOUNDS height="100" left="6645" top="2040" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   <PIN pinname="Transform In" slicecount="1" visible="1" values="||">
    </PIN>
    <PIN pinname="Y" slicecount="1" values="-1">
    </PIN>
    </NODE>
-   <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="12">
-   <BOUNDS type="Node" left="4860" top="2610" width="1845" height="270">
+   <NODE componentmode="Hidden" id="12" nodename="Multiply (Transform)" systemname="Multiply (Transform)">
+   <BOUNDS height="270" left="4860" top="2610" type="Node" width="1845">
    </BOUNDS>
    <PIN pinname="Transform In 1" visible="1">
    </PIN>
@@ -168,10 +168,10 @@
    <PIN pinname="Transform In 2" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform In 1">
+   <LINK dstnodeid="12" dstpinname="Transform In 1" srcnodeid="10" srcpinname="Transform Out">
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="4" dstpinname="View">
+   <LINK dstnodeid="4" dstpinname="View" srcnodeid="12" srcpinname="Transform Out">
    </LINK>
-   <LINK srcnodeid="11" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform In 2">
+   <LINK dstnodeid="12" dstpinname="Transform In 2" srcnodeid="11" srcpinname="Transform Out">
    </LINK>
    </PATCH>
