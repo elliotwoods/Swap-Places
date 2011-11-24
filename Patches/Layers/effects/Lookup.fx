@@ -62,7 +62,7 @@ vs2ps VS(
 
 	Pos.xy *= 2;
     //transform position
-    Out.Pos = Pos;
+    Out.Pos = mul(Pos, tW);
 
     //transform texturecoordinates
     Out.TexCd = mul(TexCd, tTex);
@@ -80,9 +80,19 @@ float4 PS(vs2ps In): COLOR
 
 	float2 lookup = tex2D(SampLookup, In.TexCd).xy;
     float4 col = tex2D(SampImage, lookup.xy) * cAmb;
+	col.a = 1;
     return col;
 }
 
+float4 PSPassthrough(vs2ps In): COLOR
+{
+    //In.TexCd = In.TexCd / In.TexCd.w; // for perpective texture projections (e.g. shadow maps) ps_2_0
+
+	float2 lookup = tex2D(SampLookup, In.TexCd).xy;
+    float4 col = tex2D(SampImage, lookup.xy) * cAmb;
+	col.a = 1;
+    return float4(lookup.x, lookup.y, 0, 1);
+}
 // --------------------------------------------------------------------------------------------------
 // TECHNIQUES:
 // --------------------------------------------------------------------------------------------------
@@ -92,7 +102,18 @@ technique TLookup
     pass P0
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
-        VertexShader = compile vs_2_0 VS();
-        PixelShader = compile ps_2_0 PS();
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PS();
     }
 }
+
+technique TPassthrough
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PSPassthrough();
+    }
+}
+

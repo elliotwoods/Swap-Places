@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\TouchOSC.v4p" systemname="TouchOSC">
-   <BOUNDS height="9030" left="10140" top="4680" type="Window" width="7245">
+   <BOUNDS height="9405" left="10140" top="4680" type="Window" width="7245">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="4" nodename="Queue (String)" systemname="Queue (String)">
    <BOUNDS height="270" left="1995" top="3105" type="Node" width="2820">
@@ -255,5 +255,21 @@
    </BOUNDS>
    </NODE>
    <LINK dstnodeid="28" dstpinname="Input" srcnodeid="31" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="32" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="1200" top="8370" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="465" left="1200" top="8370" type="Box" width="4500">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Status">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="32" dstpinname="Input String" srcnodeid="28" srcpinname="Status">
    </LINK>
    </PATCH>

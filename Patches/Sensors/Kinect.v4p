@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Sensors\Kinect.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Sensors\Kinect.v4p" systemname="Kinect">
-   <BOUNDS height="10800" left="1485" top="2865" type="Window" width="13515">
+   <BOUNDS height="10800" left="810" top="13290" type="Window" width="15675">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OpenNI\Build\modules\FullHouse (OpenNI).v4p" id="61" nodename="FullHouse (OpenNI)" systemname="FullHouse (OpenNI)">
    <BOUNDS height="270" left="585" top="1995" type="Node" width="9780">
@@ -24,6 +24,8 @@
    <PIN pinname="Normals Texture" visible="1">
    </PIN>
    <PIN pinname="Status" visible="1">
+   </PIN>
+   <PIN pinname="Invert world" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="83" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -287,13 +289,17 @@
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="154" nodename="Send (OSC Value)" systemname="Send (OSC Value)">
-   <BOUNDS height="100" left="11910" top="3450" type="Node" width="100">
+   <BOUNDS height="270" left="11910" top="4200" type="Node" width="1230">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Input Bin Size" slicecount="1" values="-1">
    </PIN>
    <PIN encoded="0" pinname="Address" slicecount="1" values="/openni/status">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="Manual">
+   </PIN>
+   <PIN pinname="Send" pintype="Input" visible="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="154" dstpinname="Input" srcnodeid="127" srcpinname="Output">
@@ -317,5 +323,55 @@
    <LINK dstnodeid="157" dstpinname="Input" srcnodeid="155" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="133" dstpinname="Input 2" srcnodeid="157" srcpinname="Count">
+   </LINK>
+   <NODE componentmode="Hidden" id="159" nodename="TogEdge (Animation)" systemname="TogEdge (Animation)">
+   <BOUNDS height="100" left="13080" top="3285" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="160" nodename="OR (Boolean)" systemname="OR (Boolean)">
+   <BOUNDS height="270" left="13080" top="3735" type="Node" width="1155">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="160" dstpinname="Input 1" srcnodeid="159" srcpinname="Up Edge">
+   </LINK>
+   <LINK dstnodeid="154" dstpinname="Send" srcnodeid="160" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="161" nodename="OnOpen (VVVV)" systemname="OnOpen (VVVV)">
+   <BOUNDS height="100" left="14190" top="3285" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="160" dstpinname="Input 2" srcnodeid="161" srcpinname="Bang">
+   </LINK>
+   <LINK dstnodeid="159" dstpinname="Input" linkstyle="VHV" srcnodeid="127" srcpinname="Output">
+   <LINKPOINT x="11955" y="3105">
+   </LINKPOINT>
+   <LINKPOINT x="13080" y="3105">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="162" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="11220" top="6675" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="11220" top="6675" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Normals Texture|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="162" dstpinname="Input Node" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="61" srcpinname="Normals Texture">
+   <LINKPOINT x="9270" y="4470">
+   </LINKPOINT>
+   <LINKPOINT x="11235" y="4470">
+   </LINKPOINT>
    </LINK>
    </PATCH>

@@ -76,7 +76,7 @@ vs2ps VS(
 	bool zero = jumps(TexCd);
 	
 	p.w *= !zero;
-	p.z = zero ? 5 : p.z;
+	p.z = zero ? 0 : p.z;
 	
 	Out.Pos = p;
 
