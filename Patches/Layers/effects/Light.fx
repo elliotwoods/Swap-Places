@@ -28,15 +28,23 @@ sampler SampLookup = sampler_state    //sampler for doing the texture-lookup
 };
 
 //texture
-texture TexImage <string uiname="Image";>;
-sampler SampImage = sampler_state    //sampler for doing the texture-lookup
+texture TexNormals <string uiname="Normals";>;
+sampler SampNormals = sampler_state    //sampler for doing the texture-lookup
 {
-    Texture   = (TexImage);          //apply a texture to the sampler
+    Texture   = (TexNormals);          //apply a texture to the sampler
     MipFilter = LINEAR;         //sampler states
     MinFilter = LINEAR;
     MagFilter = LINEAR;
 };
 
+texture TexWorld <string uiname="World";>;
+sampler SampWorld = sampler_state    //sampler for doing the texture-lookup
+{
+    Texture   = (TexWorld);          //apply a texture to the sampler
+    MipFilter = LINEAR;         //sampler states
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
 
 float4x4 tTex: TEXTUREMATRIX <string uiname="Texture Transform";>;
 
@@ -74,42 +82,54 @@ vs2ps VS(
 // PIXELSHADERS:
 // --------------------------------------------------------------------------------------------------
 
+float3 LightPosition;
+float Intensity;
+float Phase;
+float Frequency;
 float4 PS(vs2ps In): COLOR
 {
     //In.TexCd = In.TexCd / In.TexCd.w; // for perpective texture projections (e.g. shadow maps) ps_2_0
 
 	float2 lookup = tex2D(SampLookup, In.TexCd).xy;
-    float4 col = tex2D(SampImage, lookup.xy) * cAmb;
+	
+	float3 World = tex2D(SampWorld, lookup.xy).xyz;
+	float3 Normals = tex2D(SampNormals, lookup.xy).xyz;
+	
+	float3 lightVector = World - LightPosition;
+	float I = dot(normalize(lightVector), normalize(Normals));
+	float4 col = I;// / pow(length(lightVector), 2)
+	col.a = Value;
+	
+	
+	//ring
+	float x = length(lightVector);
+	col.r = pow(cos(Frequency * (x - Phase)), 10);
+	col *= length(World) > 0.4;
 	col.a = Value;
     return col;
 }
-
-float4 PSPassthrough(vs2ps In): COLOR
+float4 PSNoMarker(vs2ps In): COLOR
 {
     //In.TexCd = In.TexCd / In.TexCd.w; // for perpective texture projections (e.g. shadow maps) ps_2_0
 
 	float2 lookup = tex2D(SampLookup, In.TexCd).xy;
-    float4 col = tex2D(SampImage, lookup.xy) * cAmb;
-	col.a = 1;
-    return float4(lookup.x, lookup.y, 0, 1);
-}
-
-float3 LightDirection;
-float4 PSLight(vs2ps In): COLOR
-{
-    //In.TexCd = In.TexCd / In.TexCd.w; // for perpective texture projections (e.g. shadow maps) ps_2_0
-
-	float2 lookup = tex2D(SampLookup, In.TexCd).xy;
-    float4 col = tex2D(SampImage, lookup.xy) * cAmb;
+	
+	float3 World = tex2D(SampWorld, lookup.xy).xyz;
+	float3 Normals = tex2D(SampNormals, lookup.xy).xyz;
+	
+	float3 lightVector = World - LightPosition;
+	float I = dot(normalize(lightVector), normalize(Normals));
+	float4 col = I;// / pow(length(lightVector), 2)
 	col.a = Value;
-	col.rgb = dot(col.rgb, LightDirection);
+
     return col;
 }
+
 // --------------------------------------------------------------------------------------------------
 // TECHNIQUES:
 // --------------------------------------------------------------------------------------------------
 
-technique TLookup
+technique TLight
 {
     pass P0
     {
@@ -119,22 +139,13 @@ technique TLookup
     }
 }
 
-technique TPassthrough
-{
-    pass P0
-    {
-        //Wrap0 = U;  // useful when mesh is round like a sphere
-        VertexShader = compile vs_3_0 VS();
-        PixelShader = compile ps_3_0 PSPassthrough();
-    }
-}
 
-technique TLight
+technique TLightNoMarker
 {
     pass P0
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
         VertexShader = compile vs_3_0 VS();
-        PixelShader = compile ps_3_0 PSLight();
+        PixelShader = compile ps_3_0 PSNoMarker();
     }
 }

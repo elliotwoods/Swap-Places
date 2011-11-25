@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Audio alignment\Align.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Pathes\Audio alignment\Align.v4p" locked="0" systemname="Align">
-   <BOUNDS height="15060" left="14085" top="540" type="Window" width="10080">
+   <BOUNDS height="15060" left="2730" top="2985" type="Window" width="10080">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="%VVVV%\plugins\SpreadOperations.dll" id="8" nodename="Queue (Spreads)" systemname="Queue (Spreads)">
    <BOUNDS height="270" left="1755" top="4890" type="Node" width="2145">
@@ -578,19 +578,19 @@
    <PIN pinname="OnReceive" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="90" dstpinname="Address">
+   <LINK dstnodeid="90" dstpinname="Address" srcnodeid="60" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\Plugins\VVVV.Nodes.OSC.dll" id="91" nodename="R+H (OSC Value)" systemname="R+H (OSC Value)">
    <BOUNDS height="270" left="8790" top="1920" type="Node" width="510">
    </BOUNDS>
-   <PIN encoded="0" pinname="Address" visible="1" slicecount="1" values="/beat/rotary">
+   <PIN encoded="0" pinname="Address" slicecount="1" visible="1" values="/beat/rotary">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="OnReceive" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="90" srcpinname="OnReceive" dstnodeid="68" dstpinname="XY">
+   <LINK dstnodeid="68" dstpinname="XY" srcnodeid="90" srcpinname="OnReceive">
    </LINK>
    <NODE componentmode="Hidden" hiddenwhenlocked="0" id="92" managers="" nodename="Vector (2d Split)" systemname="Vector (2d Split)">
    <PIN pinname="XY" pintype="Input" visible="1">
@@ -606,14 +606,14 @@
    <PIN pinname="ID" pintype="Output" visible="-1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="92" srcpinname="X" dstnodeid="73" dstpinname="Input 1">
+   <LINK dstnodeid="73" dstpinname="Input 1" srcnodeid="92" srcpinname="X">
    </LINK>
-   <LINK srcnodeid="92" srcpinname="Y" dstnodeid="75" dstpinname="Input 1">
+   <LINK dstnodeid="75" dstpinname="Input 1" srcnodeid="92" srcpinname="Y">
    </LINK>
-   <LINK srcnodeid="90" srcpinname="Output" dstnodeid="92" dstpinname="XY">
+   <LINK dstnodeid="92" dstpinname="XY" srcnodeid="90" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="91" srcpinname="OnReceive" dstnodeid="78" dstpinname="Input 2">
+   <LINK dstnodeid="78" dstpinname="Input 2" srcnodeid="91" srcpinname="OnReceive">
    </LINK>
-   <LINK srcnodeid="48" srcpinname="Output" dstnodeid="88" dstpinname="Input">
+   <LINK dstnodeid="88" dstpinname="Input" srcnodeid="48" srcpinname="Output">
    </LINK>
    </PATCH>

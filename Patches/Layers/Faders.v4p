@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\Faders.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\Faders.v4p" systemname="Faders">
-   <BOUNDS height="11295" left="15840" top="2910" type="Window" width="8925">
+   <BOUNDS height="11295" left="3570" top="11400" type="Window" width="8925">
    </BOUNDS>
    <NODE componentmode="Hidden" id="3" nodename="Add (String)" systemname="Add (String)">
    <BOUNDS height="100" left="1575" top="1950" type="Node" width="100">
@@ -19,7 +19,7 @@
    <NODE componentmode="Hidden" id="4" nodename="I (Spreads)" systemname="I (Spreads)">
    <BOUNDS height="100" left="1740" top="300" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname=".. To [" slicecount="1" values="4">
+   <PIN pinname=".. To [" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -59,7 +59,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="Columns" slicecount="1" values="4">
+   <PIN pinname="Columns" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -75,7 +75,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="Columns" slicecount="1" values="4">
+   <PIN pinname="Columns" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -110,22 +110,6 @@
    </NODE>
    <LINK dstnodeid="23" dstpinname="Input 2" srcnodeid="15" srcpinname="Y Output Value">
    </LINK>
-   <NODE componentmode="Hidden" id="24" nodename="Vector (4d Split)" systemname="Vector (4d Split)">
-   <BOUNDS height="270" left="465" top="9270" type="Node" width="2055">
-   </BOUNDS>
-   <PIN pinname="XYZW" visible="1">
-   </PIN>
-   <PIN pinname="X" visible="1">
-   </PIN>
-   <PIN pinname="Y" visible="1">
-   </PIN>
-   <PIN pinname="Z" visible="1">
-   </PIN>
-   <PIN pinname="W" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="24" dstpinname="XYZW" srcnodeid="23" srcpinname="Output">
-   </LINK>
    <NODE componentmode="InABox" id="25" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="465" top="9975" type="Node" width="100">
    </BOUNDS>
@@ -136,8 +120,6 @@
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK dstnodeid="25" dstpinname="Y Input Value" srcnodeid="24" srcpinname="X">
-   </LINK>
    <NODE componentmode="InABox" id="26" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="1125" top="9975" type="Node" width="100">
    </BOUNDS>
@@ -168,12 +150,6 @@
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="3">
    </PIN>
    </NODE>
-   <LINK dstnodeid="26" dstpinname="Y Input Value" srcnodeid="24" srcpinname="Y">
-   </LINK>
-   <LINK dstnodeid="27" dstpinname="Y Input Value" srcnodeid="24" srcpinname="Z">
-   </LINK>
-   <LINK dstnodeid="28" dstpinname="Y Input Value" srcnodeid="24" srcpinname="W">
-   </LINK>
    <NODE componentmode="Hidden" id="38" nodename="FlipFlop (Animation)" systemname="FlipFlop (Animation)">
    <BOUNDS height="100" left="435" top="6810" type="Node" width="100">
    </BOUNDS>
@@ -193,7 +169,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Bang">
    </PIN>
-   <PIN pinname="Columns" slicecount="1" values="4">
+   <PIN pinname="Columns" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -247,7 +223,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="Columns" slicecount="1" values="4">
+   <PIN pinname="Columns" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -440,10 +416,60 @@
    <LINKPOINT x="5070" y="8708">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="62" dstpinname="Faders" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINK dstnodeid="62" dstpinname="Faders" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="23" srcpinname="Output">
    <LINKPOINT x="510" y="9210">
    </LINKPOINT>
    <LINKPOINT x="5835" y="9210">
    </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="24" nodename="Vector (Spreads Split)" systemname="Vector (Spreads Split)" filename="%VVVV%\addonpack\plugins\InterleaveNodes.dll">
+   <BOUNDS height="270" left="465" top="9270" type="Node" width="2685">
+   </BOUNDS>
+   <PIN pinname="XYZW" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="W" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output Count" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Output 5" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="24" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output 1" dstnodeid="25" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output 2" dstnodeid="26" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output 3" dstnodeid="27" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output 4" dstnodeid="28" dstpinname="Y Input Value">
+   </LINK>
+   <NODE componentmode="InABox" id="67" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="3105" top="9975" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="3105" top="9975" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Output 5" dstnodeid="67" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
