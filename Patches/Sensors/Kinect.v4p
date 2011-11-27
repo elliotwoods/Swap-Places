@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Sensors\Kinect.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Sensors\Kinect.v4p" systemname="Kinect">
-   <BOUNDS height="10800" left="810" top="13290" type="Window" width="15675">
+   <BOUNDS height="10800" left="1440" top="2295" type="Window" width="15675">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OpenNI\Build\modules\FullHouse (OpenNI).v4p" id="61" nodename="FullHouse (OpenNI)" systemname="FullHouse (OpenNI)">
    <BOUNDS height="270" left="585" top="1995" type="Node" width="9780">
@@ -205,9 +205,9 @@
    </BOUNDS>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Users mask|">
    </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="126" dstpinname="Input Node" srcnodeid="114" srcpinname="Mask">
-   </LINK>
    <NODE componentmode="Hidden" id="127" nodename="EQ (String)" systemname="EQ (String)">
    <BOUNDS height="100" left="11895" top="2685" type="Node" width="100">
    </BOUNDS>
@@ -407,5 +407,7 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="164" dstpinname="Y Input Value" srcnodeid="114" srcpinname="PositionXYZ">
+   </LINK>
+   <LINK srcnodeid="114" srcpinname="Mask" dstnodeid="126" dstpinname="Input Node">
    </LINK>
    </PATCH>

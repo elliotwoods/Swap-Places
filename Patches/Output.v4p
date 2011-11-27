@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Output.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Output.v4p" systemname="Output">
-   <BOUNDS height="9810" left="10095" top="14085" type="Window" width="7335">
+   <BOUNDS height="9855" left="3495" top="13395" type="Window" width="7335">
    </BOUNDS>
    <NODE componentmode="InABox" id="1" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="1170" top="420" type="Node" width="0">
@@ -78,34 +78,6 @@
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="FullScreen" id="9" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
-   <BOUNDS height="270" left="900" top="2325" type="Node" width="4020">
-   </BOUNDS>
-   <BOUNDS height="1800" left="900" top="2325" type="Box" width="2400">
-   </BOUNDS>
-   <BOUNDS height="5010" left="24465" top="6195" type="Window" width="6240">
-   </BOUNDS>
-   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|2560 x 1024|">
-   </PIN>
-   <PIN pinname="Layers" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Is Fullscreen" visible="1">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Width" visible="1">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Height" visible="1">
-   </PIN>
-   <PIN pinname="Viewport" pintype="Input" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="View" slicecount="1" visible="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="5" dstpinname="Y Input Value" srcnodeid="9" srcpinname="Is Fullscreen">
-   </LINK>
-   <LINK dstnodeid="2" dstpinname="Y Input Value" srcnodeid="9" srcpinname="Actual Backbuffer Width">
-   </LINK>
-   <LINK dstnodeid="3" dstpinname="Y Input Value" srcnodeid="9" srcpinname="Actual Backbuffer Height">
-   </LINK>
    <NODE componentmode="InABox" id="10" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="2115" top="420" type="Node" width="100">
    </BOUNDS>
@@ -164,8 +136,6 @@
    </NODE>
    <LINK dstnodeid="13" dstpinname="Switch" srcnodeid="12" srcpinname="Y Output Value">
    </LINK>
-   <LINK dstnodeid="13" dstpinname="Input 1" srcnodeid="1" srcpinname="Output Node">
-   </LINK>
    <LINK dstnodeid="13" dstpinname="Input 2" srcnodeid="10" srcpinname="Output Node">
    </LINK>
    <LINK dstnodeid="4" dstpinname="Layers" srcnodeid="13" srcpinname="Output">
@@ -188,8 +158,6 @@
    <PIN pinname="Switch" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="9" dstpinname="Viewport" srcnodeid="15" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="16" nodename="GetSlice (Node)" systemname="GetSlice (Node)">
    <BOUNDS height="100" left="5430" top="1425" type="Node" width="100">
    </BOUNDS>
@@ -210,12 +178,6 @@
    <LINKPOINT x="5460" y="2265">
    </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="9" dstpinname="Layers" linkstyle="VHV" srcnodeid="13" srcpinname="Output">
-   <LINKPOINT x="270" y="2228">
-   </LINKPOINT>
-   <LINKPOINT x="900" y="2228">
-   </LINKPOINT>
-   </LINK>
    <LINK dstnodeid="15" dstpinname="Switch" linkstyle="VHV" srcnodeid="12" srcpinname="Y Output Value">
    <LINKPOINT x="270" y="1538">
    </LINKPOINT>
@@ -223,5 +185,53 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="15" dstpinname="Input 2" srcnodeid="16" srcpinname="Output Node">
+   </LINK>
+   <NODE componentmode="Hidden" filename="Output\Treatment.v4p" id="17" nodename="Output\Treatment.v4p" systemname="Treatment" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Output\">
+   <BOUNDS height="100" left="1170" top="1035" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS height="5880" left="6105" top="16260" type="Window" width="7530">
+   </BOUNDS>
+   </NODE>
+   <LINK dstnodeid="17" dstpinname="Layers" srcnodeid="1" srcpinname="Output Node">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Input 1" srcnodeid="17" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="FullScreen" id="18" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <BOUNDS height="270" left="915" top="2340" type="Node" width="4005">
+   </BOUNDS>
+   <BOUNDS height="1800" left="915" top="2340" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="5010" left="25440" top="13770" type="Window" width="6240">
+   </BOUNDS>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|2560 x 1024|">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Viewport" pintype="Input" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Is Fullscreen" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="18" dstpinname="Layers" linkstyle="VHV" srcnodeid="13" srcpinname="Output">
+   <LINKPOINT x="270" y="2235">
+   </LINKPOINT>
+   <LINKPOINT x="915" y="2235">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="18" dstpinname="Viewport" srcnodeid="15" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="2" dstpinname="Y Input Value" srcnodeid="18" srcpinname="Actual Backbuffer Width">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Y Input Value" srcnodeid="18" srcpinname="Is Fullscreen">
+   </LINK>
+   <LINK dstnodeid="3" dstpinname="Y Input Value" srcnodeid="18" srcpinname="Actual Backbuffer Height">
    </LINK>
    </PATCH>

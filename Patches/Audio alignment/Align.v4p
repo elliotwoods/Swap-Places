@@ -186,18 +186,6 @@
    <PIN pinname="Show Slider" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="30" nodename="S+H (Animation)" systemname="S+H (Animation)">
-   <BOUNDS height="270" left="1470" top="8175" type="Node" width="3045">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Set" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="30" dstpinname="Input" srcnodeid="22" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="31" nodename="GT (Value)" systemname="GT (Value)">
    <BOUNDS height="100" left="4455" top="7680" type="Node" width="100">
    </BOUNDS>
@@ -208,8 +196,6 @@
    <PIN pinname="Input 2" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK dstnodeid="30" dstpinname="Set" srcnodeid="31" srcpinname="Output">
-   </LINK>
    <LINK dstnodeid="31" dstpinname="Input 1" linkstyle="Bezier" srcnodeid="18" srcpinname="Output Bin Size">
    <LINKPOINT x="3735" y="6760">
    </LINKPOINT>
@@ -258,8 +244,6 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="49" dstpinname="Input 1" srcnodeid="30" srcpinname="Output">
-   </LINK>
    <LINK dstnodeid="23" dstpinname="Period" srcnodeid="49" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="49" dstpinname="Input 2" srcnodeid="47" srcpinname="Output">
@@ -615,5 +599,23 @@
    <LINK dstnodeid="78" dstpinname="Input 2" srcnodeid="91" srcpinname="OnReceive">
    </LINK>
    <LINK dstnodeid="88" dstpinname="Input" srcnodeid="48" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\Calibration\SaveValueS+H\SaveValueS+H.csproj" id="93" nodename="S+H (Value Save)" systemname="S+H (Value Save)">
+   <BOUNDS height="270" left="1485" top="8160" type="Node" width="3030">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Save" slicecount="1" values="|0.464836197385921,|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="93" dstpinname="Input" srcnodeid="22" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="93" dstpinname="Set" srcnodeid="31" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="49" dstpinname="Input 1" srcnodeid="93" srcpinname="Output">
    </LINK>
    </PATCH>

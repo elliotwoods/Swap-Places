@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\L4. Light.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\L1. Preview.v4p" systemname="L1. Preview">
-   <BOUNDS height="6420" left="2775" top="18240" type="Window" width="11325">
+   <BOUNDS height="6420" left="3840" top="14850" type="Window" width="11325">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="330" top="4770" type="Node" width="100">
@@ -144,16 +144,6 @@
    <PIN pinname="Index" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="18" nodename="LFO (Animation)" systemname="LFO (Animation)">
-   <BOUNDS height="100" left="5430" top="2640" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Period" slicecount="1" values="5">
-   </PIN>
-   <PIN pinname="Cycles" visible="1">
-   </PIN>
-   </NODE>
    <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" id="20" nodename="AvoidNIL (Spreads)" systemname="AvoidNIL (Spreads)">
    <BOUNDS height="100" left="4080" top="3165" type="Node" width="100">
    </BOUNDS>
@@ -163,22 +153,6 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="20" dstpinname="Input" srcnodeid="17" srcpinname="Output">
-   </LINK>
-   <NODE componentmode="Hidden" id="22" nodename="Add (Value)" systemname="Add (Value)">
-   <BOUNDS height="270" left="5445" top="3135" type="Node" width="735">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="22" dstpinname="Input 1" srcnodeid="18" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="22" dstpinname="Input 2" srcnodeid="18" srcpinname="Cycles">
-   </LINK>
-   <LINK dstnodeid="15" dstpinname="Phase" srcnodeid="22" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="15" dstpinname="LightPosition XYZ" srcnodeid="20" srcpinname="Output">
    </LINK>
@@ -266,8 +240,6 @@
    <PIN pinname="Whole Part" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="17" dstpinname="Index" srcnodeid="29" srcpinname="Whole Part">
-   </LINK>
    <NODE componentmode="Hidden" id="30" nodename="Divide (Value)" systemname="Divide (Value)">
    <BOUNDS height="100" left="7635" top="2355" type="Node" width="100">
    </BOUNDS>
@@ -366,6 +338,48 @@
    </LINK>
    <LINK dstnodeid="34" dstpinname="Enabled" srcnodeid="6" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="15" dstpinname="Enabled">
+   <LINK dstnodeid="15" dstpinname="Enabled" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="39" nodename="R (Value)" systemname="R (Value)">
+   <BOUNDS height="100" left="6495" top="3270" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="/beat/layers">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="40" nodename="GetSlice (Spreads)" systemname="GetSlice (Spreads)">
+   <BOUNDS height="100" left="6480" top="3690" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="40" dstpinname="Input" srcnodeid="39" srcpinname="Input Value">
+   </LINK>
+   <LINK dstnodeid="15" dstpinname="Phase" srcnodeid="40" srcpinname="Output">
+   </LINK>
+   <NODE systemname="Receive (OSC Bang)" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\modules\Receive (OSC Bang).v4p" nodename="Receive (OSC Bang)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="5970" top="4485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Address" slicecount="1" values="/layers/4/next" encoded="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="5730" top="5085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Output" dstnodeid="42" dstpinname="Up">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="17" dstpinname="Index">
    </LINK>
    </PATCH>

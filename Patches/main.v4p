@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\main.v4p" filename="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\main.v4p" systemname="main">
-   <BOUNDS height="14985" left="5700" top="9690" type="Window" width="9510">
+   <BOUNDS height="14985" left="3540" top="7605" type="Window" width="9510">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="Network\TouchOSC.v4p" id="1" nodename="Network\TouchOSC.v4p" systemname="TouchOSC" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Network\">
    <BOUNDS height="100" left="210" top="900" type="Node" width="100">
@@ -57,6 +57,8 @@
    </PIN>
    <PIN pinname="Enabled">
    </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.45753,0.45753,0.45753,1.00000|">
+   </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="%VVVV%\modules\catweasel\Debug\PerfMeter (Debug).v4p" id="8" nodename="PerfMeter (Debug)" systemname="PerfMeter (Debug)">
    <BOUNDS height="100" left="600" top="7050" type="Node" width="100">
@@ -67,7 +69,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\Transform\Camera (Transform Softimage).v4p" id="10" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
-   <BOUNDS height="270" left="7110" top="7860" type="Node" width="1005">
+   <BOUNDS height="270" left="7110" top="7785" type="Node" width="1005">
    </BOUNDS>
    <PIN pinname="View Projection" pintype="Output" visible="-1">
    </PIN>
@@ -309,7 +311,7 @@
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <BOUNDS height="9810" left="10095" top="14085" type="Window" width="7335">
+   <BOUNDS height="9855" left="3495" top="13395" type="Window" width="7335">
    </BOUNDS>
    <BOUNDS height="3600" left="1095" top="0" type="Box" width="4800">
    </BOUNDS>
@@ -343,7 +345,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="Calibration\CreateLookupMap.v4p" id="25" nodename="Calibration\CreateLookupMap.v4p" systemname="CreateLookupMap" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Calibration\">
-   <BOUNDS height="270" left="5760" top="4395" type="Node" width="2160">
+   <BOUNDS height="270" left="5700" top="4395" type="Node" width="2160">
    </BOUNDS>
    <BOUNDS height="9315" left="7740" top="18015" type="Window" width="8625">
    </BOUNDS>
@@ -359,9 +361,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="32" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="0" left="6195" top="7935" type="Node" width="0">
+   <BOUNDS height="0" left="6195" top="7785" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="480" left="6195" top="7935" type="Box" width="480">
+   <BOUNDS height="480" left="6195" top="7785" type="Box" width="480">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
@@ -381,13 +383,13 @@
    <LINK dstnodeid="7" dstpinname="Enabled" srcnodeid="32" srcpinname="Y Output Value">
    </LINK>
    <NODE componentmode="Hidden" id="34" nodename="Group (EX9)" systemname="Group (EX9)">
-   <BOUNDS height="270" left="600" top="6405" type="Node" width="5130">
+   <BOUNDS height="270" left="600" top="6405" type="Node" width="7290">
    </BOUNDS>
    <PIN pinname="Layer 1" visible="1">
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Layer Template Count" slicecount="1" values="5">
+   <PIN pinname="Layer Template Count" slicecount="1" values="7">
    </PIN>
    <PIN pinname="Enabled" pintype="Input" slicecount="1" visible="-1" values="1">
    </PIN>
@@ -398,6 +400,10 @@
    <PIN pinname="Layer 4" visible="1">
    </PIN>
    <PIN pinname="Layer 5" visible="1">
+   </PIN>
+   <PIN pinname="Layer 6" visible="1">
+   </PIN>
+   <PIN pinname="Layer 7" visible="1">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="Layers\Faders.v4p" hiddenwhenlocked="0" id="35" managers="" nodename="Layers\Faders.v4p" systemname="Faders" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
@@ -425,6 +431,8 @@
    </PIN>
    <PIN pinname="4" visible="1">
    </PIN>
+   <PIN pinname="5" visible="1">
+   </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="39" nodename="Damper (Animation)" systemname="Damper (Animation)">
    <BOUNDS height="100" left="1605" top="7410" type="Node" width="100">
@@ -438,8 +446,6 @@
    </LINK>
    <LINK dstnodeid="20" dstpinname="Y Input Value" srcnodeid="39" srcpinname="Position Out">
    </LINK>
-   <LINK dstnodeid="34" dstpinname="Layer 1" srcnodeid="36" srcpinname="Layer">
-   </LINK>
    <NODE componentmode="Hidden" filename="Layers\L0. Preview.v4p" id="36" nodename="Layers\L0. Preview.v4p" systemname="L0. Preview" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -447,21 +453,19 @@
    </PIN>
    <PIN pinname="Lookup map" visible="1">
    </PIN>
-   <BOUNDS height="100" left="600" top="5460" type="Node" width="100">
+   <BOUNDS height="100" left="600" top="5760" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="6420" left="5025" top="9780" type="Window" width="7245">
+   <BOUNDS height="6420" left="9375" top="13170" type="Window" width="7245">
    </BOUNDS>
-   <BOUNDS left="600" top="5460" type="Box">
+   <BOUNDS left="600" top="5760" type="Box">
    </BOUNDS>
    <PIN pinname="Image" visible="1">
    </PIN>
+   <PIN pinname="Normals" visible="1">
+   </PIN>
+   <PIN pinname="RGB">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="34" dstpinname="Layer 3" linkstyle="VHV" srcnodeid="38" srcpinname="Layer">
-   <LINKPOINT x="3185" y="6068">
-   </LINKPOINT>
-   <LINKPOINT x="3355" y="6068">
-   </LINKPOINT>
-   </LINK>
    <NODE componentmode="Hidden" filename="Layers\L2. Users.v4p" id="38" nodename="Layers\L2. Users.v4p" systemname="L2. Users" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -473,21 +477,17 @@
    </PIN>
    <PIN pinname="User IDs" visible="1">
    </PIN>
-   <BOUNDS height="13605" left="945" top="7710" type="Window" width="16080">
+   <BOUNDS height="13605" left="0" top="12045" type="Window" width="16080">
    </BOUNDS>
-   <BOUNDS height="270" left="3135" top="5460" type="Node" width="1335">
+   <BOUNDS height="270" left="3150" top="5760" type="Node" width="1335">
    </BOUNDS>
    <PIN pinname="World" visible="1">
    </PIN>
    <PIN pinname="Transform" visible="1">
    </PIN>
+   <BOUNDS left="3150" top="5760" type="Box">
+   </BOUNDS>
    </NODE>
-   <LINK dstnodeid="34" dstpinname="Layer 2" linkstyle="VHV" srcnodeid="37" srcpinname="Layer">
-   <LINKPOINT x="1925" y="6068">
-   </LINKPOINT>
-   <LINKPOINT x="1870" y="6068">
-   </LINKPOINT>
-   </LINK>
    <NODE componentmode="Hidden" filename="Layers\L1. Edges.v4p" id="37" nodename="Layers\L1. Edges.v4p" systemname="L1. Edges" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -497,41 +497,43 @@
    </PIN>
    <PIN pinname="Users" slicecount="1" visible="1" values="||">
    </PIN>
-   <BOUNDS height="11055" left="6510" top="5055" type="Window" width="14070">
+   <BOUNDS height="6240" left="4350" top="16035" type="Window" width="7845">
    </BOUNDS>
-   <BOUNDS height="100" left="1875" top="5460" type="Node" width="100">
+   <BOUNDS height="100" left="1875" top="5760" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS left="1875" top="5460" type="Box">
+   <BOUNDS left="1875" top="5760" type="Box">
    </BOUNDS>
    <PIN pinname="RGB image" visible="1">
    </PIN>
    <PIN pinname="Depth" visible="1">
    </PIN>
+   <PIN pinname="IDs" visible="1">
+   </PIN>
+   <PIN pinname="Present" visible="1">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="37" dstpinname="Value" srcnodeid="35" srcpinname="1">
+   <LINK dstnodeid="37" dstpinname="Value" linkstyle="VHV" srcnodeid="35" srcpinname="1">
+   <LINKPOINT x="2445" y="5028">
+   </LINKPOINT>
+   <LINKPOINT x="2820" y="5128">
+   </LINKPOINT>
    </LINK>
    <LINK dstnodeid="37" dstpinname="Lookup map" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
-   <LINKPOINT x="5695" y="5048">
+   <LINKPOINT x="5655" y="5148">
    </LINKPOINT>
-   <LINKPOINT x="2000" y="5048">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="38" dstpinname="Lookup map" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
-   <LINKPOINT x="5710" y="5048">
-   </LINKPOINT>
-   <LINKPOINT x="3245" y="5048">
+   <LINKPOINT x="1980" y="5248">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="38" dstpinname="Value" linkstyle="VHV" srcnodeid="35" srcpinname="2">
-   <LINKPOINT x="4135" y="4928">
+   <LINKPOINT x="4140" y="5028">
    </LINKPOINT>
-   <LINKPOINT x="3950" y="4928">
+   <LINKPOINT x="3960" y="5128">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="36" dstpinname="Lookup map" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
-   <LINKPOINT x="5730" y="5048">
+   <LINKPOINT x="5690" y="5148">
    </LINKPOINT>
-   <LINKPOINT x="690" y="5048">
+   <LINKPOINT x="670" y="5248">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="36" dstpinname="Value" srcnodeid="35" srcpinname="0">
@@ -541,7 +543,7 @@
    </PIN>
    <BOUNDS height="270" left="3630" top="1275" type="Node" width="2535">
    </BOUNDS>
-   <BOUNDS height="10800" left="810" top="13290" type="Window" width="15675">
+   <BOUNDS height="10800" left="1440" top="2295" type="Window" width="15675">
    </BOUNDS>
    <PIN pinname="Layer" slicecount="1" visible="1" values="||">
    </PIN>
@@ -571,15 +573,9 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="38" dstpinname="Users" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Users mask">
-   <LINKPOINT x="4330" y="3503">
+   <LINKPOINT x="4335" y="3603">
    </LINKPOINT>
-   <LINKPOINT x="3650" y="3503">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="38" dstpinname="User IDs" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="ID">
-   <LINKPOINT x="3640" y="3503">
-   </LINKPOINT>
-   <LINKPOINT x="3785" y="3503">
+   <LINKPOINT x="3660" y="3703">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="11" dstpinname="Layer 3" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Layer">
@@ -589,9 +585,9 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="25" dstpinname="World texture" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="World Texture">
-   <LINKPOINT x="5775" y="2970">
+   <LINKPOINT x="5755" y="2970">
    </LINKPOINT>
-   <LINKPOINT x="7275" y="2970">
+   <LINKPOINT x="7235" y="2970">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="5" dstpinname="Open" srcnodeid="13" srcpinname="Y Output Value">
@@ -652,20 +648,6 @@
    </LINK>
    <LINK dstnodeid="7" dstpinname="View" srcnodeid="10" srcpinname="View">
    </LINK>
-   <NODE componentmode="Hidden" filename="Layers\L3. Fill.v4p" id="43" nodename="Layers\L3. Fill.v4p" systemname="L3. Fill" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
-   <BOUNDS height="100" left="4590" top="5445" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="34" dstpinname="Layer 4" linkstyle="VHV" srcnodeid="43" srcpinname="Layer">
-   <LINKPOINT x="4640" y="6060">
-   </LINKPOINT>
-   <LINKPOINT x="4375" y="6060">
-   </LINKPOINT>
-   </LINK>
    <NODE componentmode="InABox" id="44" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="7785" top="750" type="Node" width="100">
    </BOUNDS>
@@ -680,36 +662,22 @@
    <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="22" dstpinname="Layers" linkstyle="VHV" srcnodeid="34" srcpinname="Layer">
-   <LINKPOINT x="660" y="6833">
-   </LINKPOINT>
-   <LINKPOINT x="6750" y="6833">
-   </LINKPOINT>
-   </LINK>
    <LINK dstnodeid="22" dstpinname="Calibration" srcnodeid="18" srcpinname="Layer">
    </LINK>
    <LINK dstnodeid="22" dstpinname="Calibrate" srcnodeid="42" srcpinname="Output">
    </LINK>
-   <LINK dstnodeid="18" dstpinname="Projector" srcnodeid="44" srcpinname="Y Output Value">
-   </LINK>
-   <LINK dstnodeid="22" dstpinname="Projector" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="44" srcpinname="Y Output Value">
-   <LINKPOINT x="7665" y="4005">
-   </LINKPOINT>
-   <LINKPOINT x="7950" y="4005">
-   </LINKPOINT>
-   </LINK>
    <LINK dstnodeid="25" dstpinname="Calibration" linkstyle="VHV" srcnodeid="18" srcpinname="ViewProjection Transform">
-   <LINKPOINT x="5820" y="3840">
+   <LINKPOINT x="5800" y="3840">
    </LINKPOINT>
-   <LINKPOINT x="7860" y="3840">
+   <LINKPOINT x="7820" y="3840">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="38" dstpinname="World" hiddenwhenlocked="1" srcnodeid="5" srcpinname="World Image">
    </LINK>
    <LINK dstnodeid="38" dstpinname="Transform" linkstyle="VHV" srcnodeid="18" srcpinname="ViewProjection Transform">
-   <LINKPOINT x="5770" y="3840">
+   <LINKPOINT x="5775" y="3940">
    </LINKPOINT>
-   <LINKPOINT x="4250" y="3840">
+   <LINKPOINT x="4260" y="4040">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.EmguCV\Package\plugins\VVVV.Nodes.EmguCV.dll" id="45" nodename="Framerate (EmguCV)" systemname="Framerate (EmguCV)">
@@ -737,9 +705,9 @@
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="Layers\L4. Light.v4p" id="47" nodename="Layers\L4. Light.v4p" systemname="L4. Light" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
-   <BOUNDS height="100" left="5685" top="5400" type="Node" width="100">
+   <BOUNDS height="100" left="5700" top="5760" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="6420" left="2775" top="18240" type="Window" width="11325">
+   <BOUNDS height="6420" left="3840" top="14850" type="Window" width="11325">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -757,33 +725,51 @@
    </PIN>
    <PIN pinname="Active" visible="1">
    </PIN>
+   <BOUNDS left="5700" top="5760" type="Box">
+   </BOUNDS>
    </NODE>
-   <LINK dstnodeid="47" dstpinname="World" srcnodeid="5" srcpinname="World Texture">
+   <LINK dstnodeid="47" dstpinname="World" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="World Texture">
+   <LINKPOINT x="5460" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="6210" y="3703">
+   </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="47" dstpinname="Normals" srcnodeid="5" srcpinname="Normals Texture">
+   <LINK dstnodeid="47" dstpinname="Normals" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Normals Texture">
+   <LINKPOINT x="6120" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="5895" y="3703">
+   </LINKPOINT>
    </LINK>
    <LINK dstnodeid="47" dstpinname="Lookup map" srcnodeid="25" srcpinname="Lookup map">
    </LINK>
-   <LINK dstnodeid="47" dstpinname="User position" srcnodeid="5" srcpinname="User position">
-   </LINK>
-   <LINK dstnodeid="47" dstpinname="Users" srcnodeid="5" srcpinname="Users mask">
-   </LINK>
-   <LINK dstnodeid="47" dstpinname="Value" srcnodeid="35" srcpinname="3">
-   </LINK>
-   <LINK dstnodeid="47" dstpinname="Active" srcnodeid="5" srcpinname="Present">
-   </LINK>
-   <LINK dstnodeid="36" dstpinname="Image" srcnodeid="5" srcpinname="Normals Texture">
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Users mask" dstnodeid="37" dstpinname="Depth" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="4420" y="3503">
+   <LINK dstnodeid="47" dstpinname="User position" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="User position">
+   <LINKPOINT x="4350" y="3603">
    </LINKPOINT>
-   <LINKPOINT x="2420" y="3503">
+   <LINKPOINT x="6045" y="3703">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="L5. Light2" filename="Layers\L5. Light2.v4p" nodename="Layers\L5. Light2.v4p" componentmode="InAWindow" id="48">
-   <BOUNDS type="Node" left="6150" top="6045" width="100" height="100">
+   <LINK dstnodeid="47" dstpinname="Users" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Users mask">
+   <LINKPOINT x="4590" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="6690" y="3703">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="47" dstpinname="Active" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Present">
+   <LINKPOINT x="3915" y="3595">
+   </LINKPOINT>
+   <LINKPOINT x="6525" y="3695">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="37" dstpinname="Depth" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Users mask">
+   <LINKPOINT x="4420" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="2420" y="3703">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="Layers\L5. Light2.v4p" id="48" nodename="Layers\L5. Light2.v4p" systemname="L5. Light2" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
+   <BOUNDS height="100" left="6975" top="5760" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="1935" top="16110" width="11325" height="6420">
+   <BOUNDS height="6420" left="1935" top="16110" type="Window" width="11325">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -793,13 +779,201 @@
    </PIN>
    <PIN pinname="World" visible="1">
    </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   <BOUNDS left="6975" top="5760" type="Box">
+   </BOUNDS>
    </NODE>
-   <LINK srcnodeid="48" srcpinname="Layer" dstnodeid="34" dstpinname="Layer 5">
+   <LINK dstnodeid="48" dstpinname="Lookup map" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
+   <LINKPOINT x="5760" y="5148">
+   </LINKPOINT>
+   <LINKPOINT x="6975" y="5248">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="25" srcpinname="Lookup map" dstnodeid="48" dstpinname="Lookup map">
+   <LINK dstnodeid="48" dstpinname="Normals" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Normals Texture">
+   <LINKPOINT x="6135" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="7305" y="3703">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="5" srcpinname="Normals Texture" dstnodeid="48" dstpinname="Normals">
+   <LINK dstnodeid="48" dstpinname="World" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="World Texture">
+   <LINKPOINT x="5490" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="7605" y="3703">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="5" srcpinname="World Texture" dstnodeid="48" dstpinname="World">
+   <LINK dstnodeid="36" dstpinname="Normals" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Normals Texture">
+   <LINKPOINT x="6105" y="3588">
+   </LINKPOINT>
+   <LINKPOINT x="1365" y="3688">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="36" dstpinname="RGB" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="RGB Texture">
+   <LINKPOINT x="4740" y="3595">
+   </LINKPOINT>
+   <LINKPOINT x="1020" y="3695">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="Layers\L3. Fill.v4p" id="51" nodename="Layers\L3. Fill.v4p" systemname="L3. Fill" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
+   <BOUNDS height="100" left="4770" top="5760" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="11655" left="2340" top="15195" type="Window" width="14865">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   <PIN pinname="Lookup" visible="1">
+   </PIN>
+   <PIN pinname="Users" visible="1">
+   </PIN>
+   <BOUNDS left="4770" top="5760" type="Box">
+   </BOUNDS>
+   <PIN pinname="IDs" visible="1">
+   </PIN>
+   <PIN pinname="Present" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="48" dstpinname="Value" linkstyle="VHV" srcnodeid="35" srcpinname="5">
+   <LINKPOINT x="5445" y="5013">
+   </LINKPOINT>
+   <LINKPOINT x="7920" y="5113">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="47" dstpinname="Value" linkstyle="VHV" srcnodeid="35" srcpinname="4">
+   <LINKPOINT x="4695" y="5013">
+   </LINKPOINT>
+   <LINKPOINT x="6360" y="5113">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="51" dstpinname="Value" linkstyle="VHV" srcnodeid="35" srcpinname="3">
+   <LINKPOINT x="3945" y="5013">
+   </LINKPOINT>
+   <LINKPOINT x="5505" y="5113">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="51" dstpinname="Lookup" linkstyle="VHV" srcnodeid="25" srcpinname="Lookup map">
+   <LINKPOINT x="5700" y="5148">
+   </LINKPOINT>
+   <LINKPOINT x="4830" y="5248">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="51" dstpinname="Users" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Users mask">
+   <LINKPOINT x="4560" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="5160" y="3703">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.OSC\Build\modules\R+H (OSC LTP).v4p" id="52" nodename="R+H (OSC LTP)" systemname="R+H (OSC LTP)">
+   <BOUNDS height="100" left="7785" top="1290" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Address" slicecount="1" values="/calibration/iProjector">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="52" dstpinname="Input" srcnodeid="44" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="18" dstpinname="Projector" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="52" srcpinname="Output">
+   <LINKPOINT x="7815" y="2303">
+   </LINKPOINT>
+   <LINKPOINT x="7830" y="2303">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="22" dstpinname="Projector" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="52" srcpinname="Output">
+   <LINKPOINT x="7800" y="4290">
+   </LINKPOINT>
+   <LINKPOINT x="7500" y="4290">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="51" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="ID">
+   <LINKPOINT x="3675" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="4980" y="3703">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="51" dstpinname="Present" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Present">
+   <LINKPOINT x="3900" y="3603">
+   </LINKPOINT>
+   <LINKPOINT x="5340" y="3703">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 5" linkstyle="VHV" srcnodeid="47" srcpinname="Layer">
+   <LINKPOINT x="5695" y="6223">
+   </LINKPOINT>
+   <LINKPOINT x="4820" y="6123">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 6" linkstyle="VHV" srcnodeid="48" srcpinname="Layer">
+   <LINKPOINT x="6975" y="6215">
+   </LINKPOINT>
+   <LINKPOINT x="5850" y="6115">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="22" dstpinname="Layers" linkstyle="VHV" srcnodeid="34" srcpinname="Layer">
+   <LINKPOINT x="660" y="6833">
+   </LINKPOINT>
+   <LINKPOINT x="6750" y="6833">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 1" srcnodeid="36" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 2" linkstyle="VHV" srcnodeid="37" srcpinname="Layer">
+   <LINKPOINT x="1925" y="6268">
+   </LINKPOINT>
+   <LINKPOINT x="1870" y="6168">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 3" linkstyle="VHV" srcnodeid="38" srcpinname="Layer">
+   <LINKPOINT x="3195" y="6268">
+   </LINKPOINT>
+   <LINKPOINT x="3360" y="6168">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="34" dstpinname="Layer 4" linkstyle="VHV" srcnodeid="51" srcpinname="Layer">
+   <LINKPOINT x="4770" y="6268">
+   </LINKPOINT>
+   <LINKPOINT x="4455" y="6168">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="37" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="ID">
+   <LINKPOINT x="3645" y="3653">
+   </LINKPOINT>
+   <LINKPOINT x="2610" y="3653">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="37" dstpinname="Present" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="Present">
+   <LINKPOINT x="3870" y="3653">
+   </LINKPOINT>
+   <LINKPOINT x="2835" y="3653">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InAWindow" filename="Layers\L6. Turn around.v4p" id="54" nodename="Layers\L6. Turn around.v4p" systemname="L6. Turn around" path="C:\kimchiandchips\Installations\VVVV.Patches.SwapPlaces\Patches\Layers\">
+   <BOUNDS height="100" left="8025" top="5760" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="6420" left="3840" top="14850" type="Window" width="11325">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="User position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="34" dstpinname="Layer 7" srcnodeid="54" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="54" dstpinname="Transform" linkstyle="Bezier" srcnodeid="18" srcpinname="ViewProjection Transform">
+   <LINKPOINT x="5820" y="4523">
+   </LINKPOINT>
+   <LINKPOINT x="8340" y="4523">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="54" dstpinname="User position" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="5" srcpinname="User position">
+   <LINKPOINT x="4365" y="3638">
+   </LINKPOINT>
+   <LINKPOINT x="8670" y="3638">
+   </LINKPOINT>
    </LINK>
    </PATCH>
